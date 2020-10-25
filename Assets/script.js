@@ -1,6 +1,6 @@
-$(document).ready(function(){
+$(document).ready(function () {
 
-   
+
     $("button").on("click", function (e) {
         e.preventDefault();
         var userInput = $("#userInput");
@@ -16,18 +16,23 @@ $(document).ready(function(){
             method: "GET"
         }).then(function (response) {
             console.log(response);
-
-            var temp = response.main.temp;
-            
+            var city = response.name;
             var humid = response.main.humidity;
+            var temp = response.main.temp;
+
+            $("#city").text(city)
+            $("#cityName").append($("#city"))
+
+            $("Humidity").text(humid)
+            $("#cityName").append($("#Humidity"))
 
             $("#temperature").text(temp)
             $("#cityName").append($("#temperature"))
             // var ptemp =$("<p>")
-            $("humidity").text(humid)
-            $("#cityName").append($("#humidity"))
 
-            
+           
+
+
         })
     })
 });
