@@ -16,26 +16,40 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (response) {
             console.log(response);
+            
             var city = response.name;
-            var humid = response.main.humidity;
-            var temp = response.main.temp;
+
 
             $("#city").text(city)
             $("#cityName").append($("#city"))
 
-            $("Humidity").text(humid)
-            $("#cityName").append($("#Humidity"))
+            var temp = response.main.temp;
 
             $("#temperature").text(temp)
             $("#cityName").append($("#temperature"))
+
+            var humid = response.main.humidity;
+
+            $("#humidity").text(humid)
+            $("#cityName").append($("#humidity"))
+
             // var ptemp =$("<p>")
+            var feels = response.main.feels_like;
+
+            $("#feelsLike").text(feels)
+            $("#cityName").append($("#feels like"))
+
+            var wind  = response.wind.speed;
+
+            $("#windSpeed").text(wind)
+            $("#cityName").append($("#windSpeed"))
 
            
 
 
         })
     })
-});
+})
 //document .ready
 //search button on click
 //inside
