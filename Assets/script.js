@@ -16,11 +16,11 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (response) {
             console.log(response);
-            
+
             var city = response.name;
+            // var date = moment().format("LL");
 
-
-            $("#city").text(city)
+            $("#city").text(city )
             $("#cityName").append($("#city"))
 
             var temp = response.main.temp;
@@ -39,15 +39,35 @@ $(document).ready(function () {
             $("#feelsLike").text(feels)
             $("#cityName").append($("#feels like"))
 
-            var wind  = response.wind.speed;
+            var wind = response.wind.speed;
 
             $("#windSpeed").text(wind)
             $("#cityName").append($("#windSpeed"))
 
-           
+
 
 
         })
+    })
+
+    $("button").on("click", function (e) {
+        e.preventDefault();
+
+        var forecast = $("#forecast");
+        // var CastapiKey ="1459cf4cab56ffe3d017fd59b5742bc3";
+
+        var CAqueryURL = "http://api.openweathermap.org/data/2.5/forecast/daily?q=" +
+            userInput + "&cnt=5&appid=1459cf4cab56ffe3d017fd59b5742bc3";
+
+        $.ajax({
+            url: CAqueryURL,
+            method: "GET"
+        }).then(function (response) {
+            console.log(userInput);
+
+
+        })
+
     })
 })
 //document .ready
