@@ -5,7 +5,6 @@ $(document).ready(function () {
         e.preventDefault();
         var userInput = $("#userInput");
         userInput = userInput.val();
-        // var searchEL = "London"
 
         var apiKey = "e19990f9d202f8a74411dd3d6c84c336"
 
@@ -16,33 +15,51 @@ $(document).ready(function () {
             method: "GET"
         }).then(function (response) {
             console.log(response);
-
             var city = response.name;
-            // var date = moment().format("LL");
+            var icon = response.weather[0].icon;
+            $("#city").text("City : " + city)
+            $("#cityName").append($("#ci ty"))
 
-            $("#city").text(city )
-            $("#cityName").append($("#city"))
+            var temperature = response.main.temp;
 
-            var temp = response.main.temp;
+            $("#temperature").text("Temperature :" + temperature)
+            $("#cityName").append($("#temper ature"))
 
-            $("#temperature").text(temp)
-            $("#cityName").append($("#temperature"))
+            var humidity = response.main.humidity;
 
-            var humid = response.main.humidity;
-
-            $("#humidity").text(humid)
-            $("#cityName").append($("#humidity"))
+            $("#humidity").text("Himidity :" + humidity)
+            $("#cityName").append($("#humi dity"))
 
             // var ptemp =$("<p>")
             var feels = response.main.feels_like;
 
-            $("#feelsLike").text(feels)
+            $("#feelsLike").text("Feels Like :" + feels)
             $("#cityName").append($("#feels like"))
 
             var wind = response.wind.speed;
 
-            $("#windSpeed").text(wind)
-            $("#cityName").append($("#windSpeed"))
+            $("#windSpeed").text("Wind Speed :" + wind)
+            $("#cityName").append($("#wind Speed"))
+
+
+            var forecast = $("#forecast");
+        forecast = forecast.val();
+
+
+
+
+        // var CastapiKey ="1459cf4cab56ffe3d017fd59b5742bc3";
+        var userClcik =$("#forcast-day")
+        var CAqueryURL = "https://api.openweathermap.org/data/2.5/forecast/daily?q=" +
+        forecast + "&appid=31f72f5bc0accc19be6a4d47df1ef81e&cnt=5";
+
+        $.ajax({
+            url: CAqueryURL,
+            method: "GET"
+        
+        }).then(function (response) {
+            console.log();
+
 
 
 
@@ -50,23 +67,6 @@ $(document).ready(function () {
         })
     })
 
-    $("button").on("click", function (e) {
-        e.preventDefault();
-
-        var forecast = $("#forecast");
-        // var CastapiKey ="1459cf4cab56ffe3d017fd59b5742bc3";
-
-        var CAqueryURL = "http://api.openweathermap.org/data/2.5/forecast/daily?q=" +
-            userInput + "&cnt=5&appid=1459cf4cab56ffe3d017fd59b5742bc3";
-
-        $.ajax({
-            url: CAqueryURL,
-            method: "GET"
-        }).then(function (response) {
-            console.log(userInput);
-
-
-        })
 
     })
 })
