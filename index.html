@@ -24,39 +24,41 @@
     <div id="search-city" class="container">
         <div class="row">
             <div class="col">
-                <a> Search for a City: </a> <input type="text" id="userInput" placeholder="Type city name"> <button>
+                <a> Search for a City: </a> <input type="text" id="userInput" placeholder="Type city name"> 
+                <button>
                     <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor"
                         xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd"
                             d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z" />
                         <path fill-rule="evenodd"
                             d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
-                    </svg> </button>
+                    </svg> 
+                </button>
                 <br>
                 <ul id="quick" class="nav flex-column">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Austin</a>
+                        <a class="nav-link active city-btn" href="#">Austin</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Chicago</a>
+                        <a class="nav-link active city-btn" href="#">Chicago</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">New York</a>
+                        <a class="nav-link active city-btn" href="#">New York</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">San Framsico</a>
+                        <a class="nav-link active city-btn" href="#">San Frasico</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Atlanta</a>
+                        <a class="nav-link active city-btn" href="#">Atlanta</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Denver</a>
+                        <a class="nav-link active city-btn" href="#">Denver</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Seattle</a>
+                        <a class="nav-link active city-btn" href="#">Seattle</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Atlanta</a>
+                        <a class="nav-link active city-btn" href="#">Atlanta</a>
                     </li>
                    
 
@@ -65,6 +67,8 @@
             <!-- this would be for the current loacation  -->
             <div id="cityName" class="col" >
                 <h1 id="city"></h1>
+                <p> <span id="currentDate"></span></p>
+
                 <p> <span id="temperature"></span></p>
                 <p> <span id="humidity"></span></p>
                 <p><span id="feelsLike"></span></p>
@@ -72,8 +76,8 @@
 
             </div>
          
-            <div id="forecast" class="container">
-                <div class="row row-cols-2">
+            <div  class="container">
+                <div id="forecast" class="row ">
                   <!-- <h1 id="city">5 Days Forecast :</h1>
                   <div class="day1"></div>
                   <div class="day2"></div>
@@ -85,7 +89,7 @@
             </div>     
                
 
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
             <script src="https://code.jquery.com/jquery-3.5.1.min.js"
                 integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
             <script src="./Assets/script.js"></script>
